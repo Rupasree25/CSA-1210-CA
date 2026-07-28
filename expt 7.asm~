@@ -1,0 +1,13 @@
+LXI H,0000H      
+LHLD 8500H      
+XCHG             
+
+LDA 8502H        
+MOV C,A
+
+LOOP: DAD D     
+      DCR C
+      JNZ LOOP
+
+SHLD 8503H   
+HLT
