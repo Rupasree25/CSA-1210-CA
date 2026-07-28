@@ -1,0 +1,17 @@
+LDA 8500H
+MOV B,A
+LDA 8501H
+MOV C,A
+MVI D,00H
+MOV A,B
+
+LOOP: CMP C
+      JC END
+      SUB C
+      INR D
+      JMP LOOP
+
+END:  STA 8503H
+      MOV A,D
+      STA 8502H
+      HLT
