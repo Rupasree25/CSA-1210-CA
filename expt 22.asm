@@ -1,0 +1,14 @@
+LXI H, 2050H
+MOV A, M
+MVI C, 04H
+
+LOOP: INX H
+      CMP M
+      JNC NEXT
+      MOV A, M
+
+NEXT: DCR C
+      JNZ LOOP
+
+STA 2055H
+HLT
